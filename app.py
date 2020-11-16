@@ -169,7 +169,7 @@ def add_category():
 def edit_category(category_id):
     if request.method == "POST":
         submit ={
-            "category_name": request.form.get(category_name)
+            "category_name": request.form.get("category_name")
         }
         mongo.db.categories.update({"_id":ObjectId(category_id)}, submit)
         flash("Category Successfully Updated")
